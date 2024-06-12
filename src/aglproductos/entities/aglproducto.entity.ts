@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from "typeorm";
 
 @Entity('aglproducto')
-export class Paciente {
+export class Aglproducto {
   @PrimaryColumn()
   codigo: number;
 
@@ -22,11 +22,11 @@ export class Paciente {
   stock: number;
 
   @Column('numeric')
-  pvp: number;
-
-  @Column('numeric')
-  pcoste: number;
+  pcoste: string;
 
   @Column({ nullable: true })
   imagen: string;
+
+  // @OneToMany(() => Cita, (cita) => cita.paciente, { eager: true })
+  // citas?: Cita[];
 }
